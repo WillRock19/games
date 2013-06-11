@@ -61,7 +61,7 @@ class HtmlGameSpec extends Specification with WebBrowser {
     "structure 2" in
       {
         task("html", 5)
-        solve("<html><head><title>Minha página</title></head><body><b>Conte��do da minha p��gina</b></body></html>")
+        solve("<html><head><title>Minha página</title></head><body><b>Conteúdo da minha página</b></body></html>")
         verifyOk must beTrue
       }
 
@@ -89,7 +89,7 @@ class HtmlGameSpec extends Specification with WebBrowser {
     "format 1" in
     {
       task("html", 9)
-      solve("texto em <i>it��lico</i>")
+      solve("texto em <i>itálico</i>")
       verifyOk must beTrue
     }
     
@@ -110,7 +110,7 @@ class HtmlGameSpec extends Specification with WebBrowser {
     "format 4" in
     {
       task("html", 12)
-      solve("O html permite texto em <b>negrito</b>, <i>it��lico</i>, <big>grande</big>, <small>pequeno</small> e muito mais.")
+      solve("O html permite texto em <b>negrito</b>, <i>itálico</i>, <big>grande</big>, <small>pequeno</small> e muito mais.")
       verifyOk must beTrue
     }
     
@@ -124,7 +124,7 @@ class HtmlGameSpec extends Specification with WebBrowser {
     "format 6" in // TODO: Arrumar esse teste quando n��o houver mais bugs no verificador
     {
       task("html", 14)
-      solve("<pre>Esse texto    cont��m 4 espa��os e uma quebra de linha</pre>")
+      solve("<pre>Esse texto    contém 4 espaços e uma quebra de linha</pre>")
       verifyOk must beTrue // Alterar!
     }
     
