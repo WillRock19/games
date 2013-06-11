@@ -169,6 +169,21 @@ class HtmlGameSpec extends Specification with WebBrowser {
       solve("""<img src="http://www.vidageek.net/images/logo.png" height="100" width="200" alt="logo">""")
       verifyOk must beTrue
     }
+
+    "multi 1" in 
+    {
+      task("html", 22)
+      solve("""<video width=320 height=240 controls><source src="http://www.html5rocks.com/en/tutorials/video/basics/Chrome_ImF.ogv" type="video/mp4"></video>""")
+      verifyOk must beTrue
+    }
+
+    "multi 2" in 
+    {
+      task("html", 23)
+      solve("""<audio controls><source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg"></audio>""")
+      verifyOk must beTrue
+    }
+
     
     "list 1" in 
     {
@@ -218,5 +233,34 @@ class HtmlGameSpec extends Specification with WebBrowser {
       solve("""<div><span>Minha querida div</span></div>""")
       verifyOk must beTrue
     }
+    
+    "svg 1" in 
+    {
+      task("html", 31)
+      solve("""<svg><circle cx="50" cy="50" r="50" fill="blue" /></svg>""")
+      verifyOk must beTrue
+    }
+    
+    "svg 2" in 
+    {
+      task("html", 32)
+      solve("""<svg><rect x="50" y="50" width="40" height="20" fill="grey" /></svg>""")
+      verifyOk must beTrue
+    }
+    
+    "svg 3" in 
+    {
+      task("html", 33)
+      solve("""<svg><circle cx="40" cy="40" r="10" fill="white" stroke="black" stroke-width="3" /></svg>""")
+      verifyOk must beTrue
+    }
+    
+    "datalist 1" in 
+    {
+      task("html", 34)
+      solve("""<input list="transporte"><datalist id="transporte"><option value="Carro"><option value="Moto"><option value="Barco"></datalist>""")
+      verifyOk must beTrue
+    }
+    
   }
 }
