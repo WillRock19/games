@@ -74,147 +74,147 @@ class HtmlGameSpec extends Specification with WebBrowser {
 
     "paragraph 1" in
     {
-      task("html", 7)
+      task("html", 8)
       solve("<p>Oi mundo</p>")
       verifyOk must beTrue
     }
     
     "paragraph 2" in
     {
-      task("html", 8)
+      task("html", 9)
       solve("<p><b>Oi</b> mundo</p>")
       verifyOk must beTrue
     }
     
     "format 1" in
     {
-      task("html", 9)
+      task("html", 10)
       solve("texto em <i>itálico</i>")
       verifyOk must beTrue
     }
     
     "format 2" in
     {
-      task("html", 10)
+      task("html", 11)
       solve("texto <big>grande</big>")
       verifyOk must beTrue
     }
     
     "format 3" in
     {
-      task("html", 11)
+      task("html", 12)
       solve("texto <small>pequeno</small>")
       verifyOk must beTrue
     }
     
     "format 4" in
     {
-      task("html", 12)
+      task("html", 13)
       solve("O html permite texto em <b>negrito</b>, <i>itálico</i>, <big>grande</big>, <small>pequeno</small> e muito mais.")
       verifyOk must beTrue
     }
     
     "format 5" in
     {
-      task("html", 13)
+      task("html", 14)
       solve("""<code>System.out.println("Hello world!")</code>""")
       verifyOk must beTrue
     }
     
     "format 6" in // TODO: Arrumar esse teste quando n��o houver mais bugs no verificador
     {
-      task("html", 14)
+      task("html", 15)
       solve("<pre>Esse texto    contém 4 espaços e uma quebra de linha</pre>")
       verifyOk must beTrue // Alterar!
     }
     
     "link 1" in 
     {
-      task("html", 15)
+      task("html", 16)
       solve("""<a href="http://www.google.com">Google</a>""")
       verifyOk must beTrue
     }
     
     "link 2" in 
     {
-      task("html", 16)
+      task("html", 17)
       solve("""<a href="http://home.com"><h1>Home</h1></a>""")
       verifyOk must beTrue
     }
     
     "link 3" in 
     {
-      task("html", 17)
+      task("html", 18)
       solve("""<a href="#indice">Vai</a><a name="indice">Indice 1</a>""")
       verifyOk must beTrue
     }
     
     "image 1" in 
     {
-      task("html", 18)
+      task("html", 19)
       solve("""<img src="http://www.vidageek.net/images/logo.png" alt="logo">""")
       verifyOk must beTrue
     }
     
     "image 2" in 
     {
-      task("html", 19)
+      task("html", 20)
       solve("""<img src="http://www.vidageek.net/images/logo.png" height="100" alt="logo">""")
       verifyOk must beTrue
     }
     
     "image 3" in 
     {
-      task("html", 20)
+      task("html", 21)
       solve("""<img src="http://www.vidageek.net/images/logo.png" height="100" width="200" alt="logo">""")
       verifyOk must beTrue
     }
     
     "list 1" in 
     {
-      task("html", 21)
+      task("html", 24)
       solve("""<ul><li> Carro </li><li> Moto </li><li> Barco </li></ul>""")
       verifyOk must beTrue
     }
     
     "list 2" in 
     {
-      task("html", 22)
+      task("html", 25)
       solve("""<ol><li> Abacaxi </li><li> Uva </li><li> Banana </li></ol>""")
       verifyOk must beTrue
     }
     
     "list 3" in 
     {
-      task("html", 23)
+      task("html", 26)
       solve("""<dl><dt>Grama</dt><dd>Verde</dd><dt>Sol</dt><dd>Amarelo</dd></dl>""")
       verifyOk must beTrue
     }
     
     "table 1" in 
     {
-      task("html", 24)
+      task("html", 27)
       solve("""<table border="1"><tr><td>1</td><td>2</td></tr><tr><td>3</td><td>4</td></tr></table>""")
       verifyOk must beTrue
     }
     
     "table 2" in 
     {
-      task("html", 25)
+      task("html", 28)
       solve("""<table border=1><tr><td colspan=2><b>Negrito</b></td></tr><tr><td>Esquerda</td><td>Direita</td></tr></table>""")
       verifyOk must beTrue
     }
     
     "table 3" in 
     {
-      task("html", 26)
+      task("html", 29)
       solve("""<table border=1><tr><td rowspan=2><b>Negrito</b></td><td>Acima</td></tr><tr><td>Abaixo</td></tr></table>""")
       verifyOk must beTrue
     }
     
     "div 1" in 
     {
-      task("html", 27)
+      task("html", 30)
       solve("""<div><span>Minha querida div</span></div>""")
       verifyOk must beTrue
     }
